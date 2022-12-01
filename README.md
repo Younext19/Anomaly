@@ -4,6 +4,19 @@ This is an academic project in University of Rouen for 2022 for master degree.
 ## When 
 May 2022
 
+## Fonctionnalités
+```
+Se connecter en tant qu’administrateur
+l’administrateur peut créer un responsible
+Affichage des responsables dans la page de l’administrateur
+Se connecter en tant que responsible
+Le responsable peut ajouter une ressource
+Affichage des anomalies non réparés.
+Action de réparer l’anomalies.
+Génerer des QR Codes avec des données ressource et localisation et les imprimer sur 7 lignes et 2 colonne. 
+Pour l’anonyme peut scanner un QR Codes qui va le redirigier vers la page de l’anomalie avec les données de ressource et localisation remplies.
+Envoyer l’anomalie au responsable.
+```
 ## Class-Diagram
 ![diagramme](https://user-images.githubusercontent.com/48913541/205088666-bcf03c89-3e00-40fa-b0ee-c62fa07b3e8a.png)
 
