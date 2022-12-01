@@ -1,0 +1,110 @@
+{{#contentFor "style"}}
+  <link rel="stylesheet" href="/public/css/maintainer_dash.css" />
+{{/contentFor}}
+{{#contentFor "jscript"}}
+  <script defer src="/public/javascript/dash_maintainer.js"></script>
+{{/contentFor}}
+<nav>
+  <ul class="topnav">
+    <li class="">
+      <a href="#">
+        Responsable
+      </a>
+    </li>
+    <div class="right">
+      <li class="">
+        <a href="/qr_code">
+          Génerer un QR Code
+        </a>
+      </li>
+      <li class="">
+        <a
+          onclick="document.getElementById('id02').style.display='block'"
+          style="cursor: pointer;"
+        >
+          Ajouter une ressource
+        </a>
+      </li>
+      <li class="">
+        <a href="/logout">
+          Se deconnecter
+        </a>
+      </li>
+    </div>
+  </ul>
+</nav>
+<main>
+  <h3>
+    Liste des Anomalies
+  </h3>
+  <table>
+    <tr>
+      <th>
+        Ressource
+      </th>
+      <th>
+        Location
+      </th>
+      <th>
+        Message
+      </th>
+      <th>
+        Action
+      </th>
+    </tr>
+    {{#each anomalies}}
+      <tr>
+        <td>
+          {{this.resource.name}}
+        </td>
+        <td>
+          {{this.location.name}}
+        </td>
+        <td>
+          {{this.message}}
+        </td>
+        <!-- TO CHECK -->
+        <!-- Condition pour réparé ou non !!-->
+        {{!-- {{#if this.resolved}} --}}
+        <td>
+          <span data-id="{{this.id}}" class="reparer_btn">
+            Réparé
+          </span>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+</main>
+<!-- Ressource data : Name, description-->
+<!-- Modal add responsible -->
+<div id="id02" class="modal">
+  <div class="modal-content">
+    <form
+      id="form_post"
+      method="post"
+      action="/api/resources/"
+      class="container"
+    >
+      <h1>
+        Ajouter une ressource
+      </h1>
+      <input type="text" name="name" id="name" placeholder="Nom" />
+      <input
+        type="text"
+        name="description"
+        id="description"
+        placeholder="Description"
+      />
+      <p id="error_text"></p>
+      <div class="clearfix">
+        <button id="close_button" type="button" class="cancelbtn">
+          Annuler
+        </button>
+        <button id="add_button" type="submit" class="add_btn">
+          Ajouter
+        </button>
+      </div>
+      <br />
+    </form>
+  </div>
+</div>

@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.right {
+  float: right;
+}
+
+.right li {
+  margin-left: 30px;
+}
+@media screen and (max-width: 600px) {
+  ul.topnav li.right,
+  ul.topnav li {
+    float: none;
+  }
+}
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Set a style for all buttons */
+
+button:hover {
+  opacity: 1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  padding-top: 50px;
+  backdrop-filter: blur(5px);
+  background-color: #01223770;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  display: flex;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  width: 60%; /* Could be more or less, depending on screen size */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn,
+  .addbtn {
+    width: 100%;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container input {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 7px;
+  border-radius: 8px;
+}
+
+.clearfix button {
+  width: 155px;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#close_button {
+  background-color: #ff5959;
+  border-radius: 8px;
+}
+#add_button {
+  background-color: #90e39a;
+  border-radius: 8px;
+}
+
+#incorrect_pw {
+  display: none;
+  font-size: 20px;
+  color: #ff5959;
+}
+
+.delete_btn {
+  color: white;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #ff5959;
+}
+#err_resp {
+  display: none;
+  font-size: 20px;
+  color: #ff5959;
+  font-weight: bold;
+}

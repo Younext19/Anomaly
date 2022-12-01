@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.form-data{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.form-data a{
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.form-data h3{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.form-data form{
+    width: 300px;
+    margin: auto;
+}
+.form-data form button{
+    margin-left: 30px;
+}
+td{
+    width: 25vw;
+}
+@media print {
+    .form-data{
+        display: none;
+    }
+    td{
+        width: 105mm;
+        height: 42mm;
+
+    }
+    td img{
+        display: block;
+        height: 100%;
+        margin: auto;
+    }
+    td p {
+        text-align: center;
+    }
+}

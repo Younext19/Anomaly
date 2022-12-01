@@ -1,0 +1,111 @@
+{{#contentFor "style"}}
+  <link rel="stylesheet" href="/public/css/admin_dash.css" />
+{{/contentFor}}
+{{#contentFor "jscript"}}
+  <script defer src="/public/javascript/dash_admin.js"></script>
+{{/contentFor}}
+<nav>
+  <ul class="topnav">
+    <li class="">
+      <a href="/dashboard">
+        Administrateur
+      </a>
+    </li>
+    <div class="right">
+      <li class="">
+        <a style="cursor: pointer;" id="add_resp">
+          Ajouter un responsable
+        </a>
+      </li>
+      <li class="">
+        <a href="/logout">
+          Se deconnecter
+        </a>
+      </li>
+    </div>
+  </ul>
+</nav>
+<main>
+  <h3>
+    Liste des Responsables
+  </h3>
+  <table id="table_res">
+    <tr>
+      <th>
+        Responsable
+      </th>
+      <th>
+        Action
+      </th>
+    </tr>
+    {{#each maintainers}}
+      <tr>
+        <td>
+          {{this.full_name}}
+        </td>
+        <td id="span_delete">
+          <span data-id="{{this.id}}" class="delete_btn">
+            Supprimer
+          </span>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+</main>
+<!-- Res data : username, fullname, password, confirm password-->
+<!-- Modal add responsible -->
+<div id="id01" class="modal">
+  <div class="modal-content">
+    <form
+      id="form_post"
+      method="post"
+      action="/api/maintainer/"
+      class="container"
+    >
+      <h1>
+        Ajouter un responsable
+      </h1>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        required
+        placeholder="Pseudo"
+      />
+      <input
+        type="text"
+        name="full_name"
+        id="full_name"
+        required
+        placeholder="Nom et prénom"
+      />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        required
+        placeholder="Mot de passe"
+      />
+      <input
+        type="password"
+        name="password_confirm"
+        id="password_confirm"
+        required
+        placeholder="Confirmer votre mot de passe"
+      />
+      <p id="incorrect_pw">
+        les mots de passe ne correspondent pas
+      </p>
+      <p id="err_resp"></p>
+      <div class="clearfix">
+        <button id="close_button" type="button" class="cancelbtn">
+          Annuler
+        </button>
+        <button id="add_button" type="submit" class="addbtn">
+          Ajouter
+        </button>
+      </div>
+      <br />
+    </form>
+  </div>
+</div>

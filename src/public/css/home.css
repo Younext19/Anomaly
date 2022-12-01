@@ -1,0 +1,40 @@
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group select {
+  width: 250px;
+  height: 50px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  width: 245px;
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 10px;
+  width: 250px;
+  height: 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #90e39a;
+  color: white;
+}
+
+#p_details {
+  color: black;
+  font-size: 19px;
+  width: 250px;
+}

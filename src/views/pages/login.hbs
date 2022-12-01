@@ -1,0 +1,24 @@
+{{#contentFor "style"}}
+      <link rel="stylesheet" href="/public/css/login.css">
+{{/contentFor}}
+
+<div class="all-sections">
+    <div class="section1">
+        <img src="/public/images/repair.png" alt="image de réparation"/>
+    </div>
+    <div class="section2">
+        <h1>Se Connecter</h1>
+        <form action="/login" method="post">
+            {{#if info}}
+                <div class="error">{{info.message}}</div>
+            {{/if}}
+            <div class="from-group">
+                <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" value="{{username}}">
+            </div>
+            <div class="from-group">
+                <input type="password" name="password" id="password" placeholder="Mot de passe">
+            </div>
+            <button type="submit" role="button" class="btn-style">Se Connecter</button>
+        </form>
+    </div>
+</div>

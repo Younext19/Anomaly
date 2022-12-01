@@ -1,0 +1,36 @@
+{{#contentFor "style"}}
+    <link rel="stylesheet" href="/public/css/qrcode.css" />
+{{/contentFor}}
+<div class="form-data">
+    <a href="/dashboard">Retour</a>
+    <h3>Selectioner les Ressources pour générer leur QRCode:</h3>
+    <form action="/qr_code" method="post">
+        <select name="data" multiple id="">
+            {{#each resourceList}}
+                <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <button type="submit">générer</button>
+    </form>
+</div>
+<table>
+    {{#each data}}
+        <tr>
+            <td>
+                {{#if this.[0].url}}
+                    <p>Flashez-moi pour rapporter un problème</p>
+                    <img src="{{this.[0].url}}" alt="image">
+                    <p>{{{this.[0].text}}}</p>
+                {{/if}}
+            </td>
+            <td>
+                {{#if this.[1].url}}
+                    <p>Flashez-moi pour rapporter un problème</p>
+                    <img src="{{this.[1].url}}" alt="image">
+                    <p>{{{this.[1].text}}}</p>
+                {{/if}}
+            </td>
+        </tr>
+    {{/each}}
+</table>
