@@ -1,6 +1,7 @@
 # anomaly_notify
 This is an academic project in University of Rouen for 2022 for master degree.
-
+## Run
+sudo bash install.sh
 ## When 
 May 2022
 
